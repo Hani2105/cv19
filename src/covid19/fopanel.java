@@ -8,6 +8,11 @@ package covid19;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -15,10 +20,11 @@ import javax.swing.JPanel;
  * @author hanac
  */
 public class fopanel extends JPanel {
-
+ImageIcon icon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("covid.png")));
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.drawImage(icon.getImage(), this.getWidth()/2-icon.getImage().getWidth(this)/2, this.getHeight()/2-icon.getImage().getHeight(this)/2,this );
 
         for (Victim v : MainForm.Victims) {
             if (!v.isBeteg() && !v.isHalott()) {

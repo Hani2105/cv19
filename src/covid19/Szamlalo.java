@@ -55,6 +55,8 @@ public class Szamlalo extends Thread {
 
 //                System.out.println(halott);
             }
+            
+            MainForm.jPanel2.repaint();
         }
     }
 
